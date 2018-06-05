@@ -30,9 +30,8 @@ public class HexagramEncode {
 	    // this 24-bit number gets separated into four 6-bit numbers
 	    int n1 = (n >> 18) & 63, n2 = (n >> 12) & 63, n3 = (n >> 6) & 63, n4 = n & 63;
 
-	    // those four 6-bit numbers are used as indices into the base64
-	    // character list used by hexagram-encode, as it is a child of
-	    // sorts to base64
+	    // those four 6-bit numbers are used as indices into the I Ching
+	    // hexagram character list
 	    r += "" + hexagramchars.charAt(n1) + hexagramchars.charAt(n2)
 		    + hexagramchars.charAt(n3) + hexagramchars.charAt(n4);
 	}
