@@ -32,8 +32,8 @@ public class HexagramEncode {
 
 	    // those four 6-bit numbers are used as indices into the base64
 	    // character list
-	    r += "" + base64chars.charAt(n1) + base64chars.charAt(n2)
-		    + base64chars.charAt(n3) + base64chars.charAt(n4);
+	    r += "" + hexagramchars.charAt(n1) + hexagramchars.charAt(n2)
+		    + hexagramchars.charAt(n3) + hexagramchars.charAt(n4);
 	}
 
 	return r.substring(0, r.length() - p.length()) + p;
