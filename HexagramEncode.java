@@ -23,7 +23,7 @@ public class HexagramEncode {
 	    if (c > 0 && (c / 3 * 4) % 76 == 0)
 		r += "\r\n";
 
-	    // these three 8-bit (ASCII) characters become one 24-bit number
+	    // these three 8-bit characters become one 24-bit number
 	    int n = (s.charAt(c) << 16) + (s.charAt(c + 1) << 8)
 		    + (s.charAt(c + 2));
 
@@ -31,7 +31,8 @@ public class HexagramEncode {
 	    int n1 = (n >> 18) & 63, n2 = (n >> 12) & 63, n3 = (n >> 6) & 63, n4 = n & 63;
 
 	    // those four 6-bit numbers are used as indices into the base64
-	    // character list
+	    // character list used by hexagram-encode, as it is a child of
+	    // sorts to base64
 	    r += "" + hexagramchars.charAt(n1) + hexagramchars.charAt(n2)
 		    + hexagramchars.charAt(n3) + hexagramchars.charAt(n4);
 	}
